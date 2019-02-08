@@ -1,2 +1,2 @@
 # image-gallery
-MDN site practice done by me
+Prsctice problem on MDN site 

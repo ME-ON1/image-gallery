@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+<h1>Image gallery example</h1>
+
+<div class="full-img">
+  <img class="displayed-img" src="images/pic1.jpg">
+  <div class="overlay"></div>
+  <button class="dark">Darken</button>
+</div>
+
+<div class="thumb-bar">
+<!--<img class="pic2" src="images/pic2.jpg">
+<img class="pic3" src="images/pic3.jpg">
+<img class="pic4" src="images/pic4.jpg">
+<img class="pic5" src="images/pic5.jpg">
+<img class="pic1" src="images/pic1.jpg">
+-->
+
+</div>
+<script type="text/javascript">
+	var full=document.querySelector(".displayed-img");
+	var thumb_bar=document.querySelector(".thumb-bar");
+   // var addimg=document.getElementById("imgadd");
+    var display=document.querySelector('.display-img');
+    var btn=document.querySelector('.dark');
+    var overlay=document.querySelector('.overlay');
+   /* var pic1=document.querySelector(".pic1");
+    var pic2=document.querySelector(".pic2");
+    var pic3=document.querySelector(".pic3");
+    var pic4=document.querySelector(".pic4");
+    var pic5=document.querySelector(".pic5");*/
+    
+    for(var j=1;j<=5;++j) {
+       var addimg=document.createElement('img');
+       addimg.setAttribute('src','images\/pic'+j+'\.jpg');
+       thumb_bar.appendChild(addimg);
+       addimg.onclick= function(e) {
+          var imgsrc=e.target.getAttribute('src');
+         // displayimg(imgsrc);
+         full.setAttribute('src',imgsrc);
+       }
+        }
+       btn.onclick=function(){
+       	var btnclass=btn.getAttribute('class');
+       	if(btnclass === 'dark'){
+       	    btn.setAttribute('class','light');
+       	    btn.textContent='light';
+       	    overlay.style.backgroundColor='rgb(0,0,0,0.5)';
+       	}
+         else{
+         	btn.setAttribute('class','dark');
+       	    btn.textContent='dark';
+       	    overlay.style.backgroundColor='rgb(0,0,0,0)';
+         }
+     }
+
+       
+  </script>
+</body>
+</html>
